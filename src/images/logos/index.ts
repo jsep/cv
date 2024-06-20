@@ -15,9 +15,11 @@ import ParabolLogo from "./parabol.svg";
 import TastyCloudLogo from "./tastycloud.png";
 import YearProgressLogo from "./yearprogress.svg";
 import Minimal from "./minimal.svg";
+import EasyAppsLogo from "./easyapps.svg";
 
 export {
   ConsultlyLogo,
+  EasyAppsLogo,
   AmbitLogo,
   BarepapersLogo,
   BimLogo,

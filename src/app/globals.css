@@ -78,3 +78,9 @@
 .print-force-new-page {
   page-break-before: always;
 }
+@media print {
+  .badge {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact; /* For other browsers */
+  }
+}

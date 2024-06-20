@@ -1,17 +1,17 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { RESUME_DATA } from "@/data/resume-data";
-import { ProjectCard } from "@/components/project-card";
+import { RESUME_DATA, WorkExperience } from "@/data/resume-data";
+import { ReadMoreBtn } from "@/app/ReadMoreBtn";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
+  description: RESUME_DATA.summary[0],
 };
 
 export default function Page() {
@@ -24,7 +24,7 @@ export default function Page() {
             <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
               {RESUME_DATA.about}
             </p>
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+            {/* <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
               <a
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={RESUME_DATA.locationLink}
@@ -33,40 +33,24 @@ export default function Page() {
                 <GlobeIcon className="size-3" />
                 {RESUME_DATA.location}
               </a>
-            </p>
+            </p> */}
             <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.email ? (
-                <Button
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
+                <Button className="size-8" variant="outline" size="icon" asChild>
                   <a href={`mailto:${RESUME_DATA.contact.email}`}>
                     <MailIcon className="size-4" />
                   </a>
                 </Button>
               ) : null}
               {RESUME_DATA.contact.tel ? (
-                <Button
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
+                <Button className="size-8" variant="outline" size="icon" asChild>
                   <a href={`tel:${RESUME_DATA.contact.tel}`}>
                     <PhoneIcon className="size-4" />
                   </a>
                 </Button>
               ) : null}
               {RESUME_DATA.contact.social.map((social) => (
-                <Button
-                  key={social.name}
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
+                <Button key={social.name} className="size-8" variant="outline" size="icon" asChild>
                   <a href={social.url}>
                     <social.icon className="size-4" />
                   </a>
@@ -94,47 +78,19 @@ export default function Page() {
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground">
-            {RESUME_DATA.summary}
-          </p>
+          {RESUME_DATA.summary.map((paragraph, i) => {
+            return (
+              <p key={i} className="text-pretty font-mono text-sm text-muted-foreground">
+                {paragraph}
+              </p>
+            );
+          })}
         </Section>
         <Section>
           <h2 className="text-xl font-bold">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
             return (
-              <Card key={work.company}>
-                <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                      <a className="hover:underline" href={work.link}>
-                        {work.company}
-                      </a>
-
-                      <span className="inline-flex gap-x-1">
-                        {work.badges.map((badge) => (
-                          <Badge
-                            variant="secondary"
-                            className="align-middle text-xs"
-                            key={badge}
-                          >
-                            {badge}
-                          </Badge>
-                        ))}
-                      </span>
-                    </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
-                      {work.start} - {work.end}
-                    </div>
-                  </div>
-
-                  <h4 className="font-mono text-sm leading-none">
-                    {work.title}
-                  </h4>
-                </CardHeader>
-                <CardContent className="mt-2 text-xs">
-                  {work.description}
-                </CardContent>
-              </Card>
+              <WorkExperienceCard key={work.company} work={work as unknown as WorkExperience} />
             );
           })}
         </Section>
@@ -145,9 +101,7 @@ export default function Page() {
               <Card key={education.school}>
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="font-semibold leading-none">
-                      {education.school}
-                    </h3>
+                    <h3 className="font-semibold leading-none">{education.school}</h3>
                     <div className="text-sm tabular-nums text-gray-500">
                       {education.start} - {education.end}
                     </div>
@@ -167,7 +121,7 @@ export default function Page() {
           </div>
         </Section>
 
-        <Section className="print-force-new-page scroll-mb-16">
+        {/*<Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xl font-bold">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
@@ -182,7 +136,7 @@ export default function Page() {
               );
             })}
           </div>
-        </Section>
+        </Section>*/}
       </section>
 
       <CommandMenu
@@ -198,5 +152,62 @@ export default function Page() {
         ]}
       />
     </main>
+  );
+}
+
+function WorkExperienceCard({ work }: { work: WorkExperience }) {
+  const withLongDescription = work.longDescription?.length > 0;
+  return (
+    <Card className={work.forceNewPrintPage ? "print-force-new-page mt-1" : ""}>
+      <CardHeader>
+        <div className="flex items-center justify-between gap-x-2 text-base">
+          <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+            <a className="hover:underline" href={work.link}>
+              {work.company}
+            </a>
+
+            {/*<span className="inline-flex gap-x-1">*/}
+            {/*  {work.badges.map((badge) => (*/}
+            {/*    <Badge variant="secondary" className="align-middle text-xs" key={badge}>*/}
+            {/*      {badge}*/}
+            {/*    </Badge>*/}
+            {/*  ))}*/}
+            {/*</span>*/}
+          </h3>
+          <div className="text-sm tabular-nums text-gray-500">
+            {work.start} - {work.end}
+          </div>
+        </div>
+
+        <h4 className="font-mono text-sm leading-none">{work.title}</h4>
+      </CardHeader>
+      <CardContent className="mt-2 text-pretty font-mono text-xs">
+        {work.shortDescription}
+        {withLongDescription && <ReadMoreBtn textToDisplay={<LongDescription work={work} />} />}
+        <div className="mt-1">
+          {work.technologies.map((tech, i) => {
+            return (
+              <Badge key={i} className="mr-1 mt-1" variant="secondary">
+                {tech}
+              </Badge>
+            );
+          })}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function LongDescription({ work }: { work: WorkExperience }) {
+  return (
+    <div className="mb-2">
+      {work.longDescription.map((desc, i) => {
+        return (
+          <p key={i} className="mt-1 text-pretty font-mono text-xs">
+            {desc}
+          </p>
+        );
+      })}
+    </div>
   );
 }
