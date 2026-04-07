@@ -1,24 +1,5 @@
-import {
-  AmbitLogo,
-  BarepapersLogo,
-  BimLogo,
-  CDGOLogo,
-  ClevertechLogo,
-  ConsultlyLogo,
-  EasyAppsLogo,
-  EvercastLogo,
-  Howdy,
-  JarockiMeLogo,
-  JojoMobileLogo,
-  Minimal,
-  MobileVikingsLogo,
-  MonitoLogo,
-  NSNLogo,
-  ParabolLogo,
-  TastyCloudLogo,
-  YearProgressLogo,
-} from "@/images/logos";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+
 export interface WorkExperience {
   company: string;
   link: string;
@@ -28,7 +9,7 @@ export interface WorkExperience {
   start: string;
   end: string;
   forceNewPrintPage?: boolean;
-  shortDescription: string;
+  shortDescription: string | string[];
   longDescription: string[];
   technologies: string[];
 }
@@ -36,14 +17,11 @@ export interface WorkExperience {
 export const RESUME_DATA = {
   name: "Juan Sepulveda",
   initials: "JS",
-  // location: "Dominican Republic",
-  // locationLink: "",
-  about: "Full Stack Engineer focused on always learning.",
+  about: "Senior Full Stack Engineer | Mobile & Web Products",
   summary: [
-    `I am a passionate Full Stack Engineer with over 12 years of experience, dedicated to continuous learning. 
-    I have worked on various projects, supporting team members to perform their best. 
-    My expertise includes TypeScript/JavaScript, React, Node.js, and Next.js.
-    `,
+    `Senior Full Stack Engineer with 13+ years building products end to end across mobile, web, and backend.`,
+    `I obsess over two things: the experience users get and the experience developers have building it. That means shipping features that deliver real value to customers, while investing in testing, automation, and tooling so the team can move fast and ship safely. Most recently in consumer fintech.`,
+    `Specialized in TypeScript, React / React Native, Node.js, and GraphQL.`,
   ],
 
   avatarUrl:
@@ -80,17 +58,49 @@ export const RESUME_DATA = {
   ],
   work: [
     {
+      company: "Arro Finance",
+      link: "https://arrofinance.com",
+      badges: ["Remote", "Full-time"],
+      title: "Senior Full Stack Engineer",
+      logo: null,
+      start: "Nov 2024",
+      end: "Mar 2026",
+      shortDescription: [
+        "I owned a lot of the mobile app (React Native/Expo) and worked across the NestJS backend too. My most recent project was Credit Builder, which hit $45K+ MRR in just two months.",
+        "Led the migration from Apollo/GraphQL to REST with TanStack Query and Zustand, and introduced a service and viewmodel architecture to pull business logic out of components.",
+        "I built a backend-driven UI system so we could control components, features, and copy from the server without pushing OTAs. On the backend I designed an event-driven architecture so modules could react to things like payments and onboarding without being coupled to each other.",
+        "When I joined there were no tests; I added coverage for everything I shipped, including E2E for web onboarding. I also automated the app release pipeline (OTAs, App Store) so we could ship as many times as we wanted in the week.",
+      ],
+      longDescription: [],
+      technologies: [
+        "TypeScript",
+        "React Native",
+        "Expo",
+        "NestJS",
+        "GraphQL",
+        "PostgreSQL",
+        "Redis",
+        "AWS CDK",
+        "Docker",
+        "Go",
+        "Python",
+        "Plaid",
+        "Stripe",
+        "Tailwind",
+      ],
+    },
+    {
       company: "Easyapps",
       link: "",
       badges: ["Remote", "Full-time"],
       title: "Senior Software Engineer",
-      logo: EasyAppsLogo,
+      logo: null,
       start: "Sep 2021",
-      end: "Present",
+      end: "Jan 2024",
       shortDescription:
-        "As a Senior Software Engineer at Easyapps, I led the development of custom enterprise applications across platforms like Airtable and monday.com. This included establishing code standards, mentoring junior developers weekly, and creating versatile SaaS solutions for our needs.",
+        "I built custom enterprise apps on top of Airtable and monday.com, set up code standards for the team, and mentored junior devs weekly.",
       longDescription: [
-        "I led the development of a resource allocation app for Riot Games' marketing department, optimizing talent allocation, reducing vendor reliance, and improving team well-being, saving them hundreds of thousands of dollars annually. I also developed connectors for exporting Airtable data to Tableau and Databricks, enhancing data analysis and reporting to measure ROI per campaign.",
+        "My biggest project was a resource allocation app for Riot Games' marketing department. It helped them optimize how they assigned talent, cut down on vendor costs, and saved them hundreds of thousands of dollars a year. I also built connectors to export Airtable data into Tableau and Databricks so they could measure ROI per campaign.",
       ],
       technologies: [
         "Typescript/Javascript",
@@ -111,7 +121,7 @@ export const RESUME_DATA = {
       start: "Nov 2020",
       end: "Oct 2022",
       shortDescription:
-        "Built, maintained, and improved websites for WMW clients, primarily on the Shopify platform. Collaborated with front-end developers, designers, project managers, and account managers to deliver projects on time. Developed features adhering to standards for accessibility, performance, reusability, and visual quality. Addressed technical issues, fixed bugs, responded to client requests, and rebuilt site components to enhance e-commerce stores.",
+        "I built and maintained Shopify storefronts for big-name clients like BBC and Hasbro. The work was mostly frontend: building features, fixing bugs, improving performance and accessibility, and rebuilding components to make the stores better. Worked closely with designers, PMs, and other frontend devs to ship on time.",
       technologies: ["Javascript", "Shopify", "Liquid", "VueJS", "ReactJS"],
     },
     {
@@ -151,7 +161,6 @@ export const RESUME_DATA = {
       end: "Jul 2016",
       shortDescription:
         "Worked in a dynamic startup environment with frequent pivots, aimed at disrupting the e-commerce industry in Latin America. Responsibilities included developing user interfaces, utilizing Test Driven Development, participating in Pair Programming, and providing customer support. Gained valuable experience in working under pressure, adapting to rapid changes, and prioritizing client needs to deliver effective solutions.",
-
       technologies: [
         "Javascript",
         "CoffeeScript",
@@ -183,16 +192,23 @@ export const RESUME_DATA = {
   skills: [
     "TypeScript/JavaScript",
     "Python",
-    "ReactJS",
-    "Angular",
+    "React / React Native",
+    "Expo",
     "Next.js",
+    "NestJS",
     "Node.js",
     "GraphQL",
     "REST",
-    "Postgres",
-    "Firebase",
-    "TDD",
+    "TanStack Query",
+    "Zustand",
+    "PostgreSQL",
+    "Redis",
+    "AWS",
+    "Tailwind",
+    "Stripe",
+    "Plaid",
     "CI/CD",
+    "TDD",
   ],
   projects: [
     {
@@ -219,7 +235,6 @@ export const RESUME_DATA = {
       title: "budget",
       techStack: ["Side Project", "TypeScript", "Next.js"],
       description: "Helps to handle personal finances and budgeting",
-      logo: MonitoLogo,
       link: {
         label: "monito.dev",
         href: "https://monito.dev/",
@@ -228,7 +243,8 @@ export const RESUME_DATA = {
     {
       title: "Payroll",
       techStack: ["Side Project", "Next.js"],
-      description: "Help businesses to handle in Dominican Republic to handle payroll",
+      description:
+        "Help businesses to handle in Dominican Republic to handle payroll",
       link: {
         label: "github.com",
         href: "https://jarocki.me/",
