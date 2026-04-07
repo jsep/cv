@@ -50,10 +50,22 @@ export default function Page() {
             </div>
             <div className="hidden text-sm text-muted-foreground print:block">
               {RESUME_DATA.contact.email && (
-                <span>{RESUME_DATA.contact.email}</span>
+                <a
+                  href={`mailto:${RESUME_DATA.contact.email}`}
+                  className="text-primary underline underline-offset-2"
+                >
+                  {RESUME_DATA.contact.email}
+                </a>
               )}
               {RESUME_DATA.personalWebsiteUrl && (
-                <span className="ml-3">{RESUME_DATA.personalWebsiteUrl}</span>
+                <a
+                  href={RESUME_DATA.personalWebsiteUrl}
+                  className="ml-3 text-primary underline underline-offset-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {RESUME_DATA.personalWebsiteUrl}
+                </a>
               )}
             </div>
           </div>

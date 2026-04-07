@@ -17,7 +17,7 @@ export interface WorkExperience {
 export const RESUME_DATA = {
   name: "Juan Sepulveda",
   initials: "JS",
-  about: "Senior Full Stack Engineer | Mobile & Web Products",
+  about: "Senior Full Stack Engineer",
   summary: [
     `Senior Full Stack Engineer with 13+ years building products end to end across mobile, web, and backend.`,
     `I obsess over two things: the experience users get and the experience developers have building it. That means shipping features that deliver real value to customers, while investing in testing, automation, and tooling so the team can move fast and ship safely. Most recently in consumer fintech.`,
@@ -26,7 +26,7 @@ export const RESUME_DATA = {
 
   avatarUrl:
     "https://avatars.githubusercontent.com/u/4037939?s=400&u=53010a075d43818bd7ed82f85599dfce90f42579&v=4",
-  personalWebsiteUrl: "https://juan.do",
+  personalWebsiteUrl: "https://cv.juan.do",
   contact: {
     email: "me@juan.do",
     tel: null,
@@ -243,8 +243,7 @@ export const RESUME_DATA = {
     {
       title: "Payroll",
       techStack: ["Side Project", "Next.js"],
-      description:
-        "Help businesses to handle in Dominican Republic to handle payroll",
+      description: "Help businesses to handle in Dominican Republic to handle payroll",
       link: {
         label: "github.com",
         href: "https://jarocki.me/",
