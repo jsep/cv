@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
 export interface WorkExperience {
@@ -9,7 +10,7 @@ export interface WorkExperience {
   start: string;
   end: string;
   forceNewPrintPage?: boolean;
-  shortDescription: string | string[];
+  shortDescription: string | Array<string | ReactNode>;
   longDescription: string[];
   technologies: string[];
 }
@@ -19,9 +20,9 @@ export const RESUME_DATA = {
   initials: "JS",
   about: "Senior Full Stack Engineer",
   summary: [
-    `Senior Full Stack Engineer with 13+ years building products end to end across mobile, web, and backend.`,
-    `I obsess over two things: the experience users get and the experience developers have building it. That means shipping features that deliver real value to customers, while investing in testing, automation, and tooling so the team can move fast and ship safely. Most recently in consumer fintech.`,
-    `Specialized in TypeScript, React / React Native, Node.js, and GraphQL.`,
+    `Senior Full Stack Engineer with 13+ years building products end to end across mobile, web, and backend. Lately a lot of that has been consumer fintech: fast shipping, real money involved, and not much room for sloppy releases.`,
+    `I obsess over two things: the experience users get and the experience developers have building it. So I push for work that actually helps the business, not just demos, and I put time into tests, automation, and keeping the codebase something both the team and AI agents can still work with a year from now.`,
+    `Used to startup chaos (vague specs, sharp turns, owning things end to end). I mentor when I can. Remote only. Bilingual in English and Spanish. Mostly TypeScript, React / React Native, Node.js, and GraphQL.`,
   ],
 
   avatarUrl:
@@ -66,16 +67,38 @@ export const RESUME_DATA = {
       start: "Nov 2024",
       end: "Mar 2026",
       shortDescription: [
-        "I owned a lot of the mobile app (React Native/Expo) and worked across the NestJS backend too. My most recent project was Credit Builder, which hit $45K+ MRR in just two months.",
-        "Led the migration from Apollo/GraphQL to REST with TanStack Query and Zustand, and introduced a service and viewmodel architecture to pull business logic out of components.",
-        "I built a backend-driven UI system so we could control components, features, and copy from the server without pushing OTAs. On the backend I designed an event-driven architecture so modules could react to things like payments and onboarding without being coupled to each other.",
-        "When I joined there were no tests; I added coverage for everything I shipped, including E2E for web onboarding. I also automated the app release pipeline (OTAs, App Store) so we could ship as many times as we wanted in the week.",
+        <>
+          Owned the React Native (Expo) app and worked across our NestJS backend. Shipped <strong>Credit Builder</strong>; it reached{" "}
+          <strong>$45K+ MRR</strong> in about two months.
+        </>,
+        <>
+          Migrated Apollo/GraphQL to REST with TanStack Query and Zustand, and moved business logic into services and view models, which gave us{" "}
+          <strong>improved code maintainability and reduced frontend complexity</strong>.
+        </>,
+        <>
+          Built a <strong>backend-driven UI system</strong> enabling dynamic control of features, components, and copy without app redeploys,{" "}
+          <strong>accelerating iteration speed and reducing reliance on OTA releases</strong>.
+        </>,
+        <>
+          Designed and implemented an <strong>event-driven backend architecture</strong> that <strong>decoupled modules</strong> and allowed scalable reactions to
+          payments and onboarding events.
+        </>,
+        <>
+          Established testing practices from scratch, adding unit and end-to-end coverage (including web onboarding) to{" "}
+          <strong>increase reliability and reduce production risk</strong>.
+        </>,
+        <>
+          Automated <strong>mobile release pipelines</strong> (OTA updates and App Store deployments), enabling{" "}
+          <strong>high-frequency releases and faster feature delivery cycles</strong>.
+        </>,
       ],
       longDescription: [],
       technologies: [
         "TypeScript",
         "React Native",
         "Expo",
+        "TanStack Query",
+        "Zustand",
         "NestJS",
         "GraphQL",
         "PostgreSQL",

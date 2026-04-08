@@ -203,9 +203,13 @@ function WorkExperienceCard({
           </div>
 
           {Array.isArray(work.shortDescription) ? (
-            work.shortDescription.map((p, i) => (
-              <p key={i} className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{p}</p>
-            ))
+            <ul className="mt-3 list-disc space-y-1.5 pl-4 text-[13px] leading-relaxed text-muted-foreground print:space-y-1 print:pl-4 [&_strong]:font-semibold [&_strong]:text-foreground">
+              {work.shortDescription.map((item, i) => (
+                <li key={i} className="pl-0.5">
+                  {item}
+                </li>
+              ))}
+            </ul>
           ) : work.shortDescription ? (
             <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">
               {work.shortDescription}
