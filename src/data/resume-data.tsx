@@ -120,11 +120,25 @@ export const RESUME_DATA = {
       logo: null,
       start: "Sep 2021",
       end: "Jan 2024",
-      shortDescription:
-        "I built custom enterprise apps on top of Airtable and monday.com, set up code standards for the team, and mentored junior devs weekly.",
-      longDescription: [
-        "My biggest project was a resource allocation app for Riot Games' marketing department. It helped them optimize how they assigned talent, cut down on vendor costs, and saved them hundreds of thousands of dollars a year. I also built connectors to export Airtable data into Tableau and Databricks so they could measure ROI per campaign.",
+      shortDescription: [
+        <>
+          Built custom enterprise applications on <strong>Airtable</strong> and <strong>monday.com</strong>, enabling teams to streamline workflows and{" "}
+          <strong>improve operational efficiency</strong>.
+        </>,
+        <>
+          Established team-wide coding standards and mentored junior developers through weekly sessions,{" "}
+          <strong>improving code quality and accelerating team growth</strong>.
+        </>,
+        <>
+          Led development of a resource allocation platform for Riot Games&apos; marketing department, optimizing talent assignment and vendor usage to{" "}
+          <strong>save hundreds of thousands of dollars annually</strong>.
+        </>,
+        <>
+          Developed data integration pipelines exporting Airtable data into <strong>Tableau</strong> and <strong>Databricks</strong>, enabling{" "}
+          <strong>campaign-level ROI tracking and more informed decision-making</strong>.
+        </>,
       ],
+      longDescription: [],
       technologies: [
         "Typescript/Javascript",
         "ReactJS",
@@ -143,8 +157,25 @@ export const RESUME_DATA = {
       logo: null,
       start: "Nov 2020",
       end: "Oct 2022",
-      shortDescription:
-        "I built and maintained Shopify storefronts for big-name clients like BBC and Hasbro. The work was mostly frontend: building features, fixing bugs, improving performance and accessibility, and rebuilding components to make the stores better. Worked closely with designers, PMs, and other frontend devs to ship on time.",
+      shortDescription: [
+        <>
+          Built and maintained <strong>Shopify</strong> storefronts for enterprise clients including <strong>BBC</strong> and <strong>Hasbro</strong>, delivering
+          high-quality, production-ready e-commerce experiences.
+        </>,
+        <>
+          Developed new frontend features and resolved bugs to <strong>improve site stability, usability, and overall customer experience</strong>.
+        </>,
+        <>
+          Optimized performance and accessibility across storefronts, <strong>enhancing load times</strong> and ensuring compliance with modern web standards.
+        </>,
+        <>
+          Refactored and rebuilt UI components to improve <strong>maintainability and scalability</strong> of Shopify themes.
+        </>,
+        <>
+          Collaborated cross-functionally with designers, product managers, and engineers to <strong>deliver projects on time</strong> and align with client
+          requirements.
+        </>,
+      ],
       technologies: ["Javascript", "Shopify", "Liquid", "VueJS", "ReactJS"],
     },
     {
@@ -155,8 +186,24 @@ export const RESUME_DATA = {
       logo: null,
       start: "Jul 2016",
       end: "Nov 2020",
-      shortDescription:
-        "Led design and architecture decisions. Designed testing strategies and implemented CI/CD workflows. Created GraphQL APIs, built APIs for mobile applications, and developed a marketplace with Stripe for payments and financial services. Implemented a highly personalized permissions system.",
+      shortDescription: [
+        <>
+          Led system design and architectural decisions, establishing <strong>scalable foundations</strong> for web and mobile applications.
+        </>,
+        <>
+          Designed testing strategies and implemented CI/CD pipelines, <strong>improving deployment reliability and accelerating release cycles</strong>.
+        </>,
+        <>
+          Built <strong>GraphQL</strong> APIs to support mobile and web clients, enabling efficient data access and <strong>system interoperability</strong>.
+        </>,
+        <>
+          Developed a marketplace platform with <strong>Stripe</strong> integrations for payments and financial services, facilitating secure transactions and revenue
+          generation.
+        </>,
+        <>
+          Implemented a highly customizable permissions system, enabling <strong>fine-grained access control</strong> and supporting complex user roles.
+        </>,
+      ],
       technologies: [
         "Typescript/Javascript",
         "Python 3",
@@ -182,8 +229,23 @@ export const RESUME_DATA = {
       forceNewPrintPage: true,
       start: "Nov 2013",
       end: "Jul 2016",
-      shortDescription:
-        "Worked in a dynamic startup environment with frequent pivots, aimed at disrupting the e-commerce industry in Latin America. Responsibilities included developing user interfaces, utilizing Test Driven Development, participating in Pair Programming, and providing customer support. Gained valuable experience in working under pressure, adapting to rapid changes, and prioritizing client needs to deliver effective solutions.",
+      shortDescription: [
+        <>
+          Developed user-facing interfaces in a fast-paced startup environment, delivering features that supported evolving product direction and customer needs.
+        </>,
+        <>
+          Applied <strong>Test-Driven Development (TDD)</strong> and pair programming practices to <strong>improve code quality and reduce defects</strong>.
+        </>,
+        <>
+          Adapted quickly to frequent product pivots, <strong>prioritizing high-impact work</strong> and maintaining delivery under tight timelines.
+        </>,
+        <>
+          Collaborated closely with cross-functional teams to align engineering efforts with business goals and user requirements.
+        </>,
+        <>
+          Provided direct customer support when needed, <strong>strengthening feedback loops and informing product improvements</strong>.
+        </>,
+      ],
       technologies: [
         "Javascript",
         "CoffeeScript",
@@ -207,8 +269,16 @@ export const RESUME_DATA = {
       logo: null,
       start: "Nov 2012",
       end: "Jul 2013",
-      shortDescription:
-        "Built the INTRANET of the company for managing internal processes such as the hiring process, payments, support tickets, and project management. Automated the process of creating scripts for handling inbound calls.",
+      shortDescription: [
+        <>
+          Designed and developed the company intranet to manage hiring, payments, support tickets, and project workflows,{" "}
+          <strong>centralizing operations and improving internal efficiency</strong>.
+        </>,
+        <>
+          Automated the generation of scripts for handling inbound calls, <strong>reducing manual effort and increasing consistency</strong> in customer
+          interactions.
+        </>,
+      ],
       technologies: ["PHP", "Javascript", "HTML", "CSS", "Java", "Mysql"],
     },
   ],
