@@ -18,11 +18,11 @@ export interface WorkExperience {
 export const RESUME_DATA = {
   name: "Juan Sepulveda",
   initials: "JS",
-  about: "Senior Full Stack Engineer | Mobile & Web Products",
+  about: "Senior Full Stack Engineer | Mobile, Web & Backend",
   summary: [
-    `Senior Full Stack Engineer with 13+ years building products end to end across mobile, web, and backend.`,
-    `I obsess over two things: the experience users get and the experience developers have building it. That means shipping features that deliver real value to customers, while investing in testing, automation, and tooling so the team can move fast and ship safely. Most recently in consumer fintech.`,
-    `Specialized in TypeScript, React / React Native, Node.js, and GraphQL.`,
+    `Senior Full Stack Engineer with 13+ years building products end to end across mobile, web, and backend. Lately a lot of that has been consumer fintech: fast shipping, real money involved, and not much room for sloppy releases.`,
+    `I obsess over two things: the experience users get and the experience developers have building it. So I push for work that actually helps the business, not just demos, and I put time into tests, automation, and keeping the codebase something both the team and AI agents can still work with a year from now.`,
+    `Used to startup chaos (vague specs, sharp turns, owning things end to end). I mentor when I can. Remote only. Bilingual in English and Spanish. Mostly TypeScript, React / React Native, Node.js, and GraphQL.`,
   ],
 
   avatarUrl:
@@ -67,10 +67,36 @@ export const RESUME_DATA = {
       start: "Nov 2024",
       end: "Mar 2026",
       shortDescription: [
-        "I owned a lot of the mobile app (React Native/Expo) and worked across the NestJS backend too. My most recent project was Credit Builder, which hit $45K+ MRR in just two months.",
-        "Led the migration from Apollo/GraphQL to REST with TanStack Query and Zustand, and introduced a service and viewmodel architecture to pull business logic out of components.",
-        "I built a backend-driven UI system so we could control components, features, and copy from the server without pushing OTAs. On the backend I designed an event-driven architecture so modules could react to things like payments and onboarding without being coupled to each other.",
-        "When I joined there were no tests; I added coverage for everything I shipped, including E2E for web onboarding. I also automated the app release pipeline (OTAs, App Store) so we could ship as many times as we wanted in the week.",
+        <>
+          Owned the <strong>React Native</strong> (<strong>Expo</strong>) app and worked across our{" "}
+          <strong>NestJS</strong> backend. Shipped <strong>Credit Builder</strong>; it reached{" "}
+          <strong>$45K+ MRR</strong> in about two months.
+        </>,
+        <>
+          Migrated <strong>Apollo</strong>/<strong>GraphQL</strong> to <strong>REST</strong> with{" "}
+          <strong>TanStack Query</strong> and <strong>Zustand</strong>, and moved business logic
+          into services and view models, which gave us{" "}
+          <strong>improved code maintainability and reduced frontend complexity</strong>.
+        </>,
+        <>
+          Built a <strong>backend-driven UI system</strong> enabling dynamic control of features,
+          components, and copy without app redeploys,{" "}
+          <strong>accelerating iteration speed and reducing reliance on OTA releases</strong>.
+        </>,
+        <>
+          Designed and implemented an <strong>event-driven backend architecture</strong> that{" "}
+          <strong>decoupled modules</strong> and allowed scalable reactions to payments and
+          onboarding events.
+        </>,
+        <>
+          Established testing practices from scratch, adding unit and end-to-end coverage (including
+          web onboarding) to <strong>increase reliability and reduce production risk</strong>.
+        </>,
+        <>
+          Automated <strong>mobile release pipelines</strong> (OTA updates and App Store
+          deployments), enabling{" "}
+          <strong>high-frequency releases and faster feature delivery cycles</strong>.
+        </>,
       ],
       longDescription: [],
       technologies: [
@@ -98,21 +124,22 @@ export const RESUME_DATA = {
       end: "Jan 2024",
       shortDescription: [
         <>
-          Shipped bespoke enterprise apps on <strong>Airtable</strong> and <strong>monday.com</strong>,
-          giving teams clearer workflows and less manual overhead.
+          Shipped bespoke enterprise apps on <strong>Airtable</strong> and{" "}
+          <strong>monday.com</strong>, giving teams clearer workflows and less manual overhead.
         </>,
         <>
           Set shared engineering conventions and ran weekly mentoring,{" "}
-          <strong>raising bar for reviews</strong> and <strong>speeding up ramp for newer devs</strong>.
+          <strong>raising bar for reviews</strong> and{" "}
+          <strong>speeding up ramp for newer devs</strong>.
         </>,
         <>
-          Owned delivery of a marketing resource-planning tool for <strong>Riot Games</strong>, tightening
-          staffing and vendor use to <strong>cut annual spend by six figures</strong>.
+          Owned delivery of a marketing resource-planning tool for <strong>Riot Games</strong>,
+          tightening staffing and vendor use to <strong>cut annual spend by six figures</strong>.
         </>,
         <>
           Built ETL-style flows from <strong>Airtable</strong> into <strong>Tableau</strong> and{" "}
-          <strong>Databricks</strong>, unlocking <strong>ROI at the campaign level</strong> and sharper exec
-          reporting.
+          <strong>Databricks</strong>, unlocking <strong>ROI at the campaign level</strong> and
+          sharper exec reporting.
         </>,
       ],
       longDescription: [],
@@ -169,23 +196,24 @@ export const RESUME_DATA = {
       end: "Nov 2020",
       shortDescription: [
         <>
-          Drove architecture for web and mobile, <strong>keeping systems evolvable</strong> as scope grew.
+          Drove architecture for web and mobile, <strong>keeping systems evolvable</strong> as scope
+          grew.
         </>,
         <>
-          Defined test strategy and wired <strong>CI/CD</strong>, <strong>fewer bad deploys</strong> and{" "}
-          <strong>shorter time to prod</strong>.
+          Defined test strategy and wired <strong>CI/CD</strong>, <strong>fewer bad deploys</strong>{" "}
+          and <strong>shorter time to prod</strong>.
         </>,
         <>
-          Delivered <strong>GraphQL</strong> backends so clients could <strong>fetch only what they need</strong>{" "}
-          with <strong>clear contracts</strong>.
+          Delivered <strong>GraphQL</strong> backends so clients could{" "}
+          <strong>fetch only what they need</strong> with <strong>clear contracts</strong>.
         </>,
         <>
           Built a marketplace with <strong>Stripe</strong> for money movement and payouts,{" "}
           <strong>supporting trust and monetization</strong>.
         </>,
         <>
-          Shipped a <strong>configurable RBAC</strong> layer, <strong>granular permissions</strong> without
-          one-off hacks.
+          Shipped a <strong>configurable RBAC</strong> layer, <strong>granular permissions</strong>{" "}
+          without one-off hacks.
         </>,
       ],
       longDescription: [],
@@ -220,20 +248,20 @@ export const RESUME_DATA = {
           <strong>shipping to shifting priorities</strong>.
         </>,
         <>
-          Used <strong>TDD</strong> and <strong>pairing</strong> to <strong>catch regressions earlier</strong> and{" "}
-          <strong>keep changes safe</strong>.
+          Used <strong>TDD</strong> and <strong>pairing</strong> to{" "}
+          <strong>catch regressions earlier</strong> and <strong>keep changes safe</strong>.
         </>,
         <>
-          Re-prioritized constantly as the roadmap moved, <strong>protecting throughput</strong> under{" "}
-          <strong>aggressive deadlines</strong>.
+          Re-prioritized constantly as the roadmap moved, <strong>protecting throughput</strong>{" "}
+          under <strong>aggressive deadlines</strong>.
         </>,
         <>
           Worked tightly with product and ops so builds <strong>tracked business goals</strong> and{" "}
           <strong>real user pain</strong>.
         </>,
         <>
-          Jumped on <strong>support escalations</strong> when needed, <strong>closing the loop</strong> from
-          tickets to product tweaks.
+          Jumped on <strong>support escalations</strong> when needed,{" "}
+          <strong>closing the loop</strong> from tickets to product tweaks.
         </>,
       ],
       longDescription: [],
@@ -262,7 +290,8 @@ export const RESUME_DATA = {
       end: "Jul 2013",
       shortDescription: [
         <>
-          End-to-end <strong>intranet</strong>: hiring, payroll-adjacent flows, tickets, and project ops—
+          End-to-end <strong>intranet</strong>: hiring, payroll-adjacent flows, tickets, and project
+          ops—
           <strong>one place for internal work</strong>.
         </>,
         <>
@@ -328,8 +357,7 @@ export const RESUME_DATA = {
     {
       title: "Payroll",
       techStack: ["Side Project", "Next.js"],
-      description:
-        "Help businesses in the Dominican Republic to handle payroll",
+      description: "Help businesses in the Dominican Republic to handle payroll",
       link: {
         label: "github.com",
         href: "https://jarocki.me/",
