@@ -10,7 +10,7 @@ export interface WorkExperience {
   start: string;
   end: string;
   forceNewPrintPage?: boolean;
-  shortDescription: string | Array<string | ReactNode>;
+  shortDescription: string | ReactNode[];
   longDescription: string[];
   technologies: string[];
 }
@@ -18,11 +18,11 @@ export interface WorkExperience {
 export const RESUME_DATA = {
   name: "Juan Sepulveda",
   initials: "JS",
-  about: "Senior Full Stack Engineer",
+  about: "Senior Full Stack Engineer | Mobile & Web Products",
   summary: [
-    `Senior Full Stack Engineer with 13+ years building products end to end across mobile, web, and backend. Lately a lot of that has been consumer fintech: fast shipping, real money involved, and not much room for sloppy releases.`,
-    `I obsess over two things: the experience users get and the experience developers have building it. So I push for work that actually helps the business, not just demos, and I put time into tests, automation, and keeping the codebase something both the team and AI agents can still work with a year from now.`,
-    `Used to startup chaos (vague specs, sharp turns, owning things end to end). I mentor when I can. Remote only. Bilingual in English and Spanish. Mostly TypeScript, React / React Native, Node.js, and GraphQL.`,
+    `Senior Full Stack Engineer with 13+ years building products end to end across mobile, web, and backend.`,
+    `I obsess over two things: the experience users get and the experience developers have building it. That means shipping features that deliver real value to customers, while investing in testing, automation, and tooling so the team can move fast and ship safely. Most recently in consumer fintech.`,
+    `Specialized in TypeScript, React / React Native, Node.js, and GraphQL.`,
   ],
 
   avatarUrl:
@@ -67,30 +67,10 @@ export const RESUME_DATA = {
       start: "Nov 2024",
       end: "Mar 2026",
       shortDescription: [
-        <>
-          Owned the React Native (Expo) app and worked across our NestJS backend. Shipped <strong>Credit Builder</strong>; it reached{" "}
-          <strong>$45K+ MRR</strong> in about two months.
-        </>,
-        <>
-          Migrated Apollo/GraphQL to REST with TanStack Query and Zustand, and moved business logic into services and view models, which gave us{" "}
-          <strong>improved code maintainability and reduced frontend complexity</strong>.
-        </>,
-        <>
-          Built a <strong>backend-driven UI system</strong> enabling dynamic control of features, components, and copy without app redeploys,{" "}
-          <strong>accelerating iteration speed and reducing reliance on OTA releases</strong>.
-        </>,
-        <>
-          Designed and implemented an <strong>event-driven backend architecture</strong> that <strong>decoupled modules</strong> and allowed scalable reactions to
-          payments and onboarding events.
-        </>,
-        <>
-          Established testing practices from scratch, adding unit and end-to-end coverage (including web onboarding) to{" "}
-          <strong>increase reliability and reduce production risk</strong>.
-        </>,
-        <>
-          Automated <strong>mobile release pipelines</strong> (OTA updates and App Store deployments), enabling{" "}
-          <strong>high-frequency releases and faster feature delivery cycles</strong>.
-        </>,
+        "I owned a lot of the mobile app (React Native/Expo) and worked across the NestJS backend too. My most recent project was Credit Builder, which hit $45K+ MRR in just two months.",
+        "Led the migration from Apollo/GraphQL to REST with TanStack Query and Zustand, and introduced a service and viewmodel architecture to pull business logic out of components.",
+        "I built a backend-driven UI system so we could control components, features, and copy from the server without pushing OTAs. On the backend I designed an event-driven architecture so modules could react to things like payments and onboarding without being coupled to each other.",
+        "When I joined there were no tests; I added coverage for everything I shipped, including E2E for web onboarding. I also automated the app release pipeline (OTAs, App Store) so we could ship as many times as we wanted in the week.",
       ],
       longDescription: [],
       technologies: [
@@ -103,13 +83,9 @@ export const RESUME_DATA = {
         "GraphQL",
         "PostgreSQL",
         "Redis",
-        "AWS CDK",
-        "Docker",
-        "Go",
-        "Python",
         "Plaid",
         "Stripe",
-        "Tailwind CSS",
+        "Tailwind",
       ],
     },
     {
@@ -122,25 +98,26 @@ export const RESUME_DATA = {
       end: "Jan 2024",
       shortDescription: [
         <>
-          Built custom enterprise applications on <strong>Airtable</strong> and <strong>monday.com</strong>, enabling teams to streamline workflows and{" "}
-          <strong>improve operational efficiency</strong>.
+          Shipped bespoke enterprise apps on <strong>Airtable</strong> and <strong>monday.com</strong>,
+          giving teams clearer workflows and less manual overhead.
         </>,
         <>
-          Established team-wide coding standards and mentored junior developers through weekly sessions,{" "}
-          <strong>improving code quality and accelerating team growth</strong>.
+          Set shared engineering conventions and ran weekly mentoring,{" "}
+          <strong>raising bar for reviews</strong> and <strong>speeding up ramp for newer devs</strong>.
         </>,
         <>
-          Led development of a resource allocation platform for Riot Games&apos; marketing department, optimizing talent assignment and vendor usage to{" "}
-          <strong>save hundreds of thousands of dollars annually</strong>.
+          Owned delivery of a marketing resource-planning tool for <strong>Riot Games</strong>, tightening
+          staffing and vendor use to <strong>cut annual spend by six figures</strong>.
         </>,
         <>
-          Developed data integration pipelines exporting Airtable data into <strong>Tableau</strong> and <strong>Databricks</strong>, enabling{" "}
-          <strong>campaign-level ROI tracking and more informed decision-making</strong>.
+          Built ETL-style flows from <strong>Airtable</strong> into <strong>Tableau</strong> and{" "}
+          <strong>Databricks</strong>, unlocking <strong>ROI at the campaign level</strong> and sharper exec
+          reporting.
         </>,
       ],
       longDescription: [],
       technologies: [
-        "TypeScript / JavaScript",
+        "TypeScript/JavaScript",
         "React",
         "Next.js",
         "Firebase",
@@ -159,27 +136,31 @@ export const RESUME_DATA = {
       end: "Oct 2022",
       shortDescription: [
         <>
-          Built and maintained <strong>Shopify</strong> storefronts for enterprise clients including <strong>BBC</strong> and <strong>Hasbro</strong>, delivering
-          high-quality, production-ready e-commerce experiences.
+          Owned <strong>Shopify</strong> builds for large brands (e.g. <strong>BBC</strong>,{" "}
+          <strong>Hasbro</strong>) from polish through launch.
         </>,
         <>
-          Developed new frontend features and resolved bugs to <strong>improve site stability, usability, and overall customer experience</strong>.
+          Shipped UI work and hardening fixes that <strong>reduced incidents</strong> and{" "}
+          <strong>smoothed checkout and browsing</strong>.
         </>,
         <>
-          Optimized performance and accessibility across storefronts, <strong>enhancing load times</strong> and ensuring compliance with modern web standards.
+          Tuned perf and a11y so pages <strong>loaded faster</strong> and{" "}
+          <strong>met current accessibility expectations</strong>.
         </>,
         <>
-          Refactored and rebuilt UI components to improve <strong>maintainability and scalability</strong> of Shopify themes.
+          Reworked theme components for <strong>cleaner extension</strong> and{" "}
+          <strong>less theme-specific debt</strong>.
         </>,
         <>
-          Collaborated cross-functionally with designers, product managers, and engineers to <strong>deliver projects on time</strong> and align with client
-          requirements.
+          Partnered with design, PM, and client stakeholders to <strong>hit dates</strong> and{" "}
+          <strong>match scope and brand</strong>.
         </>,
       ],
+      longDescription: [],
       technologies: ["JavaScript", "Shopify", "Liquid", "Vue.js", "React"],
     },
     {
-      company: "DIGITAL ENHANCEMENTS, L.L.C.",
+      company: "Digital Enhancements, LLC",
       link: "",
       badges: ["Remote", "Full-time"],
       title: "Software Engineer",
@@ -188,24 +169,28 @@ export const RESUME_DATA = {
       end: "Nov 2020",
       shortDescription: [
         <>
-          Led system design and architectural decisions, establishing <strong>scalable foundations</strong> for web and mobile applications.
+          Drove architecture for web and mobile, <strong>keeping systems evolvable</strong> as scope grew.
         </>,
         <>
-          Designed testing strategies and implemented CI/CD pipelines, <strong>improving deployment reliability and accelerating release cycles</strong>.
+          Defined test strategy and wired <strong>CI/CD</strong>, <strong>fewer bad deploys</strong> and{" "}
+          <strong>shorter time to prod</strong>.
         </>,
         <>
-          Built <strong>GraphQL</strong> APIs to support mobile and web clients, enabling efficient data access and <strong>system interoperability</strong>.
+          Delivered <strong>GraphQL</strong> backends so clients could <strong>fetch only what they need</strong>{" "}
+          with <strong>clear contracts</strong>.
         </>,
         <>
-          Developed a marketplace platform with <strong>Stripe</strong> integrations for payments and financial services, facilitating secure transactions and revenue
-          generation.
+          Built a marketplace with <strong>Stripe</strong> for money movement and payouts,{" "}
+          <strong>supporting trust and monetization</strong>.
         </>,
         <>
-          Implemented a highly customizable permissions system, enabling <strong>fine-grained access control</strong> and supporting complex user roles.
+          Shipped a <strong>configurable RBAC</strong> layer, <strong>granular permissions</strong> without
+          one-off hacks.
         </>,
       ],
+      longDescription: [],
       technologies: [
-        "TypeScript / JavaScript",
+        "TypeScript/JavaScript",
         "Python",
         "Django",
         "GraphQL",
@@ -231,21 +216,27 @@ export const RESUME_DATA = {
       end: "Jul 2016",
       shortDescription: [
         <>
-          Developed user-facing interfaces in a fast-paced startup environment, delivering features that supported evolving product direction and customer needs.
+          Built customer-facing UI in a <strong>high-churn product</strong> environment,{" "}
+          <strong>shipping to shifting priorities</strong>.
         </>,
         <>
-          Applied <strong>Test-Driven Development (TDD)</strong> and pair programming practices to <strong>improve code quality and reduce defects</strong>.
+          Used <strong>TDD</strong> and <strong>pairing</strong> to <strong>catch regressions earlier</strong> and{" "}
+          <strong>keep changes safe</strong>.
         </>,
         <>
-          Adapted quickly to frequent product pivots, <strong>prioritizing high-impact work</strong> and maintaining delivery under tight timelines.
+          Re-prioritized constantly as the roadmap moved, <strong>protecting throughput</strong> under{" "}
+          <strong>aggressive deadlines</strong>.
         </>,
         <>
-          Collaborated closely with cross-functional teams to align engineering efforts with business goals and user requirements.
+          Worked tightly with product and ops so builds <strong>tracked business goals</strong> and{" "}
+          <strong>real user pain</strong>.
         </>,
         <>
-          Provided direct customer support when needed, <strong>strengthening feedback loops and informing product improvements</strong>.
+          Jumped on <strong>support escalations</strong> when needed, <strong>closing the loop</strong> from
+          tickets to product tweaks.
         </>,
       ],
+      longDescription: [],
       technologies: [
         "JavaScript",
         "CoffeeScript",
@@ -262,7 +253,7 @@ export const RESUME_DATA = {
       ],
     },
     {
-      company: "VIXICOM, LLC",
+      company: "Vixicom, LLC",
       link: "",
       badges: ["Full-time"],
       title: "Software Developer",
@@ -271,40 +262,36 @@ export const RESUME_DATA = {
       end: "Jul 2013",
       shortDescription: [
         <>
-          Designed and developed the company intranet to manage hiring, payments, support tickets, and project workflows,{" "}
-          <strong>centralizing operations and improving internal efficiency</strong>.
+          End-to-end <strong>intranet</strong>: hiring, payroll-adjacent flows, tickets, and project ops—
+          <strong>one place for internal work</strong>.
         </>,
         <>
-          Automated the generation of scripts for handling inbound calls, <strong>reducing manual effort and increasing consistency</strong> in customer
-          interactions.
+          Scripted inbound-call handling, <strong>cutting prep time</strong> and{" "}
+          <strong>standardizing how reps open conversations</strong>.
         </>,
       ],
+      longDescription: [],
       technologies: ["PHP", "JavaScript", "HTML", "CSS", "Java", "MySQL"],
     },
   ],
   skills: [
-    "TypeScript / JavaScript",
+    "TypeScript/JavaScript",
     "Python",
-    "Go",
-    "Node.js",
     "React / React Native",
     "Expo",
     "Next.js",
-    "TanStack Query",
-    "Zustand",
-    "Tailwind CSS",
     "NestJS",
+    "Node.js",
     "GraphQL",
     "REST",
+    "TanStack Query",
+    "Zustand",
     "PostgreSQL",
     "Redis",
-    "MongoDB",
-    "Docker",
-    "AWS CDK",
+    "AWS",
+    "Tailwind",
     "Stripe",
     "Plaid",
-    "Firebase",
-    "Shopify",
     "CI/CD",
     "TDD",
   ],
@@ -341,7 +328,8 @@ export const RESUME_DATA = {
     {
       title: "Payroll",
       techStack: ["Side Project", "Next.js"],
-      description: "Help businesses to handle in Dominican Republic to handle payroll",
+      description:
+        "Help businesses in the Dominican Republic to handle payroll",
       link: {
         label: "github.com",
         href: "https://jarocki.me/",
