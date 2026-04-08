@@ -88,6 +88,16 @@ export default function Page() {
           ))}
         </section>
 
+        {/* Skills */}
+        <section>
+          <SectionHeading>Skills</SectionHeading>
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {RESUME_DATA.skills.map((skill) => (
+              <Badge key={skill}>{skill}</Badge>
+            ))}
+          </div>
+        </section>
+
         {/* Work Experience */}
         <section>
           <SectionHeading>Experience</SectionHeading>
@@ -105,16 +115,6 @@ export default function Page() {
           <p className="mt-4 hidden text-center text-sm text-muted-foreground print:block">
             Full experience and earlier roles at <a href="https://cv.juan.do" className="text-primary underline">cv.juan.do</a>
           </p>
-        </section>
-
-        {/* Skills */}
-        <section>
-          <SectionHeading>Skills</SectionHeading>
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {RESUME_DATA.skills.map((skill) => (
-              <Badge key={skill}>{skill}</Badge>
-            ))}
-          </div>
         </section>
 
         {/* Education */}
