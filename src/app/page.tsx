@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA, WorkExperience } from "@/data/resume-data";
+import { track as trackEvent } from "@vercel/analytics/server";
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
   description: RESUME_DATA.summary[0],
@@ -20,9 +21,12 @@ function withSource(url: string, sendTo: string | undefined): string {
 export default async function Page({
   searchParams,
 }: {
-  searchParams: Promise<{ sendTo?: string }>;
+  searchParams: Promise<{ sendTo?: string; source?: string }>;
 }) {
-  const { sendTo } = await searchParams;
+  const { sendTo, source } = await searchParams;
+  if (source) {
+    await trackEvent("source_visit", { source });
+  }
   const track = (url: string) => withSource(url, sendTo);
   return (
     <main className="relative min-h-screen bg-background">
