@@ -10,7 +10,20 @@ export const metadata: Metadata = {
   description: RESUME_DATA.summary[0],
 };
 
-export default function Page() {
+function withSource(url: string, sendTo: string | undefined): string {
+  if (!sendTo) return url;
+  const u = new URL(url);
+  u.searchParams.set("source", sendTo);
+  return u.toString();
+}
+
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ sendTo?: string }>;
+}) {
+  const { sendTo } = await searchParams;
+  const track = (url: string) => withSource(url, sendTo);
   return (
     <main className="relative min-h-screen bg-background">
       {/* Hero */}
@@ -59,7 +72,7 @@ export default function Page() {
               )}
               {RESUME_DATA.personalWebsiteUrl && (
                 <a
-                  href={RESUME_DATA.personalWebsiteUrl}
+                  href={track(RESUME_DATA.personalWebsiteUrl)}
                   className="ml-3 text-primary underline underline-offset-2"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -113,7 +126,7 @@ export default function Page() {
             ))}
           </div>
           <p className="mt-4 hidden text-center text-sm text-muted-foreground print:block">
-            Full experience and earlier roles at <a href="https://cv.juan.do" className="text-primary underline">cv.juan.do</a>
+            Full experience and earlier roles at <a href={track("https://cv.juan.do")} className="text-primary underline">cv.juan.do</a>
           </p>
         </section>
 
@@ -137,7 +150,7 @@ export default function Page() {
       <CommandMenu
         links={[
           {
-            url: RESUME_DATA.personalWebsiteUrl,
+            url: track(RESUME_DATA.personalWebsiteUrl),
             title: "Personal Website",
           },
           ...RESUME_DATA.contact.social.map((s) => ({

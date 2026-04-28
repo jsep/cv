@@ -44,7 +44,7 @@ export const RESUME_DATA = {
       },
       {
         name: "X",
-        url: "https://twitter.com/jsep_do",
+        url: "https://x.com/jsep_do",
         icon: XIcon,
       },
     ],
